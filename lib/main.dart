@@ -9,7 +9,7 @@ import 'package:flutter_fic7_app/pages/auth/auth_page.dart';
 import 'package:flutter_fic7_app/pages/dashboard/dashboard_page.dart';
 import 'package:flutter_fic7_app/pages/splash/splash_page.dart';
 import 'package:flutter_fic7_app/pages/utils/light_themes.dart';
-
+import 'package:flutter_fic7_app/bloc/order/order_bloc.dart';
 import 'bloc/login/login_bloc.dart';
 import 'bloc/register/register_bloc.dart';
 
@@ -41,6 +41,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CheckoutBloc(),
+        ),
+        BlocProvider(
+          create: (context) => OrderBloc(),
         ),
       ],
       child: MaterialApp(
