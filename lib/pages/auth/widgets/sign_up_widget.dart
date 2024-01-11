@@ -4,13 +4,13 @@ import 'package:flutter_fic7_app/bloc/register/register_bloc.dart';
 import 'package:flutter_fic7_app/data/datasources/auth_local_datasource.dart';
 import 'package:flutter_fic7_app/data/models/request/register_request_model.dart';
 
-import '../../../utils/color_resources.dart';
-import '../../../utils/custom_themes.dart';
-import '../../../utils/dimensions.dart';
 import '../../base_widgets/button/custom_button.dart';
 import '../../base_widgets/text_field/custom_password_textfield.dart';
 import '../../base_widgets/text_field/custom_textfield.dart';
 import '../../dashboard/dashboard_page.dart';
+import '../../utils/color_resources.dart';
+import '../../utils/custom_themes.dart';
+import '../../utils/dimensions.dart';
 
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({Key? key}) : super(key: key);
@@ -149,7 +149,7 @@ class SignUpWidgetState extends State<SignUpWidget> {
                   await AuthLocalDatasource().saveAuthData(data);
                   Navigator.pushAndRemoveUntil(context,
                       MaterialPageRoute(builder: (context) {
-                    return DashboardPage();
+                    return const DashboardPage();
                   }), (route) => false);
                 },
               );
